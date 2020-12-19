@@ -1,0 +1,16 @@
+@import 'mixin';
+
+.menu-item {
+  @include card-render;
+  &:hover {
+    @include card-hover;
+  }
+  .menu-item-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  h2 {
+    @include card-title;
+  }
+}

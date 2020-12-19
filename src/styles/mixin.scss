@@ -1,0 +1,75 @@
+@mixin burger-lines {
+  display: inline-block;
+  background-color: black;
+  border-radius: 2px;
+  height: 4px;
+  width: 40px;
+  transition: all 0.2s linear;
+}
+
+@mixin card-render {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+  padding-bottom: 3rem;
+  transition: box-shadow 0.5s;
+  border-radius: 20px;
+  animation: fadeIn 2s;
+  box-shadow: 0px 2px 35px 10px rgba(13, 13, 13, 0.06);
+}
+
+@mixin card-title {
+  font-family: Lato, sans-serif;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #e64487;
+}
+
+@mixin card-hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 35px 10px rgba(13, 13, 13, 0.15);
+}
+
+@mixin card-content {
+  border-radius: 19px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.05);
+  background: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease;
+  backface-visibility: hidden;
+}
+
+@mixin switcher {
+  font-family: Lato;
+  position: absolute;
+  background-color: #bebbbb;
+  transition: 0.6s;
+  box-shadow: 0px 3px 7px 4px rgba(0,0,0,0.06), inset 0px 3px 7px 4px rgba(0,0,0,0.06), inset 0px 3px 7px 4px rgba(0,0,0,0.06);
+}
+
+@mixin endgame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+}
+
+@mixin answer-result {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}

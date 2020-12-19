@@ -1,0 +1,189 @@
+@import 'mixin';
+
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: calc(20vh - 10px);
+  row-gap: 2rem;
+  column-gap: 2rem;
+  h2 {
+    @include card-title;
+    margin-top: 0;
+  }
+}
+
+.stat-mode {
+  padding: 3rem;
+}
+
+.cards-list-item {
+  position: relative;
+  @include card-render;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    @include card-hover;
+  }
+}
+.front-side {
+  @include card-content;
+}
+.back-side {
+  @include card-content;
+}
+.hidden-card {
+  transform: rotateY(180deg);
+}
+.card-img {
+  border-radius: 19px 19px 0 0;
+  width: 100%;
+  height: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  transition: all 0.5s ease;
+}
+.card-description {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+.play-mode {
+  background-color: #af88c4;
+}
+.hidden-description {
+  display: none;
+}
+.game-img {
+  margin-top: 10%;
+}
+.game__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  width: 850px;
+  position: absolute;
+  top: calc(17% - 32px);
+  left: calc(25% - 160px);
+}
+.game-attempts {
+  display: flex;
+  img {
+    width: 35px;
+  }
+}
+.game-button, .repeat-word {
+  border: 2px solid #af88c4;
+  border-radius: 20px;
+  padding: 0.3rem;
+  width: 10rem;
+  transition: 0.3s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #d5a7ee;
+  }
+}
+.repeat-word {
+  min-width: 10rem;
+}
+
+.card-turn {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  background-image: url(../assets/img/turn.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.hidden-btn {
+  display: none;
+}
+.guessed-element {
+  opacity: 0.6;
+}
+.win-end {
+  @include endgame;
+  padding-bottom: 10rem;
+  h2 {
+    @include card-title;
+    margin-bottom: 3.5rem;
+  }
+  img {
+    height: 200px;
+    width: 335px;
+    border-radius: 20px;
+  }
+}
+.loose-end {
+  @include endgame;
+  h2 {
+    @include card-title;
+    margin-bottom: 3.5rem;
+  }
+  img {
+    height: 265px;
+    width: 195px;
+    border-radius: 20px;
+  }
+}
+.error-answer {
+  @include answer-result;
+  background-color: rgb(192, 56, 56);
+}
+.correct-answer {
+  @include answer-result;
+  background-color:rgb(26, 94, 26);
+}
+@media screen and (max-width: 925px) {
+  .cards-list {
+    column-gap: 1rem;
+    justify-content: space-around;
+  }
+  .game__controls {
+    width: 670px;
+  }
+}
+@media screen and (max-width: 690px) {
+  .game__controls {
+    width: 545px;
+  }
+}
+@media screen and (max-width: 664px) {
+  .content {
+    padding-bottom: 5rem;
+  }
+  .cards-list {
+    padding-top: calc(26vh - 10px);
+  }
+  .game__controls {
+    flex-direction: column;
+    left: calc(51% - 160px);
+    width: 320px;
+    .game-button, .repeat-word {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .stat-mode {
+    padding: 0;
+  }
+}

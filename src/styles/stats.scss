@@ -1,0 +1,193 @@
+@import 'mixin';
+
+.hidden-stat {
+  display: none;
+}
+.title-stat {
+  @include card-title;
+}
+
+.stats {
+  text-align: center;
+  padding-left: 0.2rem;
+  padding-right: 1.2rem;
+  position: relative;
+}
+.stats-game {
+  background-color: white;
+  border: 1px solid rgb(240, 240, 240);;
+  border: initial;
+  border-collapse: collapse;
+  font-family: Roboto;
+  font-size: 16px;
+  color: rgba(0,0,0,.65);
+  text-align: left;
+  width: 100%;
+  th {
+    background-color: #af88c4;
+  }
+}
+.sorted-col-1 .td-1,
+.sorted-col-2 .td-2,
+.sorted-col-3 .td-3,
+.sorted-col-4 .td-4,
+.sorted-col-5 .td-5,
+.sorted-col-6 .td-6,
+.sorted-col-7 .td-7 {
+   background-color: rgb(250, 250, 250);
+
+
+  td, th {
+    border: 1px solid rgb(240, 240, 240);;
+    padding: 5px 10px 5px 5px;
+    white-space: nowrap;
+  }
+
+  & #table-content tr:hover td {
+    background-color: rgb(245, 245, 245);
+  }
+
+  & th {
+    font-size: 11px;
+    cursor: pointer;
+    background-color: #af88c4;
+    user-select: none;
+    position: relative;
+
+    &:hover {
+      background-color: #af88c4;
+    }
+  }
+
+  & th::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid rgb(100, 100, 100);
+  }
+
+  & th::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 7px solid rgb(100, 100, 100);
+  }
+
+  & .sorted {
+    position: relative;
+
+    &::before {
+      border-top: 7px solid #e9a137;
+    }
+
+    &.asc::after {
+      border-bottom: 7px solid #e9a137;
+    }
+
+    &.asc::before {
+      border-top: 7px solid rgb(100, 100, 100);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stats-game {
+    font-size: 2vw;
+    & th {
+      font-size: 2vw;
+    }
+
+    & th::after {
+      border-left: 1vw solid transparent;
+      border-right: 1vw solid transparent;
+      border-bottom: 1.3vw solid rgb(100, 100, 100);
+    }
+
+    & th::before {
+      border-left: 1vw solid transparent;
+      border-right: 1vw solid transparent;
+      border-top: 1.3vw solid rgb(100, 100, 100);
+    }
+
+    & .sorted {
+
+      &::before {
+        border-top: 1.3vw solid #e9a137;
+      }
+
+      &.asc::after {
+        border-bottom: 1.3vw solid #e9a137;
+      }
+
+      &.asc::before {
+        border-top: 1.3vw solid rgb(100, 100, 100);
+      }
+    }
+  }
+}
+
+
+.h1-stat {
+  color: rgb(100, 100, 100);
+}
+
+.stats-button {
+  border: 0;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.reset-stats {
+    background-color: #af88c4;
+    margin-right: 10px;
+  }
+
+  &.repeat-words {
+    background-color: #e9a137;
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+.info-message {
+  position: absolute;
+  width: 250px;
+  height: 61px;
+  left: calc(50vw - 150px);
+  top: calc(50vh - 150px);
+  border: 2px solid #945db1;
+  background-color: #af88c4;
+  font-family: Roboto;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+.stats-message {
+  @include card-title;
+  font-size: 12px;
+}

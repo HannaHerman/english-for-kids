@@ -1,0 +1,32 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  box-sizing: border-box;
+}
+.rs-logo {
+  transition-duration: 0.2s;
+  img {
+    width: 95px;
+    height: 40px;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.git-link {
+  font-family: Lato;
+  text-decoration: none;
+  color: #ae5b4a;
+  transition-duration: 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.footer-year {
+  font-family: Lato;
+  color: #ae5b4a;
+}
